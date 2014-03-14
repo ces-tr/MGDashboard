@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5AA175B-8BB9-465B-ADF7-E60E5C930D7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>MonoGamecher</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\WindowsGL\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\WindowsGL\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MGDash\Case360.cs" />
+    <Compile Include="MGDash\ContentManagement.cs" />
+    <Compile Include="MGDash\Box.cs" />
+    <Compile Include="MGDash\Coverflow.cs" />
+    <Compile Include="MGDash\Dashboard.cs" />
+    <Compile Include="MGDash\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MGDash\Settings.cs" />
+    <Compile Include="MGDash\TitleBar.cs" />
+    <Compile Include="MGDash\ButtonControl.cs" />
+    <Compile Include="MGDash\FileChooser.cs" />
+    <Compile Include="MGDash\Floats.cs" />
+    <Compile Include="MGDash\GamesSection.cs" />
+    <Compile Include="MGDash\DrawableComponent.cs" />
+    <Compile Include="MGDash\BoxOptionMenu.cs" />
+    <Compile Include="MGDash\OptionsSection.cs" />
+    <Compile Include="MGDash\Components.cs" />
+    <Compile Include="MGDash\GameDetails.cs" />
+    <Compile Include="MGDash\GClass19.cs" />
+    <Compile Include="MGDash\Dialog.cs" />
+    <Compile Include="MGDash\GClass20.cs" />
+    <Compile Include="MGDash\GClass22.cs" />
+    <Compile Include="MGDash\GClass24.cs" />
+    <Compile Include="MGDash\BlurEffect.cs" />
+    <Compile Include="MGDash\Message.cs" />
+    <Compile Include="MGDash\BlurBackground.cs" />
+    <Compile Include="MGDash\GClass32.cs" />
+    <Compile Include="MGDash\InitializeComponents.cs" />
+    <Compile Include="MGDash\GClass4.cs" />
+    <Compile Include="MGDash\About.cs" />
+    <Compile Include="MGDash\GClass7.cs" />
+    <Compile Include="MGDash\GClass8.cs" />
+    <Compile Include="MGDash\GClass9.cs" />
+    <Compile Include="MGDash\GInterface.cs" />
+    <Compile Include="MGDash\GInterface0.cs" />
+    <Compile Include="MGDash\GInterface1.cs" />
+    <Compile Include="MGDash\HTTPConnection.cs" />
+    <Compile Include="MGDash\ControllerEvents.cs" />
+    <Compile Include="MGDash\Integers.cs" />
+    <Compile Include="MGDash\Intro.cs" />
+    <Compile Include="MGDash\Menu.cs" />
+    <Compile Include="GameWindowExtensions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\Model\Category.cs" />
+    <Compile Include="Sources\Model\User.cs" />
+    <Compile Include="Sources\Model\VideoGame.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.Network">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX.DirectInput, Version=4.0.10.43, Culture=neutral, PublicKeyToken=96bb577564343f16, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SlimDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Tao.Sdl">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\Tao.Sdl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <EmbeddedResource Include="MGDash\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Nuclex.Input\Nuclex.Input %28xna-4.0-x86%29.csproj">
+      <Project>{4D9CD97B-289E-4519-A6F8-58C6DB8040D4}</Project>
+      <Name>Nuclex.Input %28xna-4.0-x86%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\categories.json" />
+    <EmbeddedResource Include="Resources\games.json" />
+    <EmbeddedResource Include="Resources\user.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
