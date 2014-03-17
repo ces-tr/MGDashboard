@@ -170,7 +170,7 @@ namespace MGDash
 		{
 			try
 			{
-				StreamReader reader = File.OpenText(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "\\MGDash\\data\\config\\games.json"));
+				StreamReader reader = File.OpenText(Environment.GetFolderPath(Environment.SpecialFolder.Personal)+ @"\\MGDash\\data\\config\\games.json");
 				JArray array = JArray.Parse(reader.ReadToEnd());
 				this.gameList = new List<VideoGame>();
 				foreach (JObject obj2 in (IEnumerable<JToken>)array)
@@ -184,7 +184,7 @@ namespace MGDash
 			}
 			catch (Exception exception)
 			{
-				throw new NotImplementedException("no se cargo el archivo de configuracion");
+				throw new NotImplementedException("Games Config file not loaded");
 			}
 		}
 

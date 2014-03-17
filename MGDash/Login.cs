@@ -391,7 +391,7 @@ namespace MGDash
 						MessageBox.Show(string.Concat("There was an error while trying to create your links folder:", exception.Message), "Configuration error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 					}
 				}
-				path = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "\\MGDash\\data\\config");
+				path = Environment.GetFolderPath(Environment.SpecialFolder.Personal)+ @"\\MGDash\\data\\config";
 				if (!Directory.Exists(path))
 				{
 					try

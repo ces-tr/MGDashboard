@@ -7,10 +7,10 @@
     public sealed class Intro : BaseClassDrawable, IControllerEvents 
     {
         private bool skippedIntro;
-        private Color turizoftlogo_color;
+        private Color MGlogo_color;
         private Color gamecherlogo_color;
         public readonly int int_0;
-        private int turizoftlogo_duration;
+        private int MGlogo_duration;
         private int gamecherlogo_duration;
         private int[] int_3;
         private Rectangle rectangle_1;
@@ -22,7 +22,7 @@
         {
             this.int_0 = 0xbb8;
             base.DashBoard = (DashBoard) game_0;
-            this.turizoftlogo_duration = 0;
+            this.MGlogo_duration = 0;
             this.gamecherlogo_duration = 0;
             this.rectangle_2 = new Rectangle[this.int_0];
             this.int_3 = new int[this.int_0];
@@ -78,17 +78,17 @@
 
         public override void CalculateColors() {
 
-            var turizoftlogo = (int)(Math.Sin((3.1415926535897931 * this.turizoftlogo_duration) / 300.0) * 255.0);
+            var turizoftlogo = (int)(Math.Sin((3.1415926535897931 * this.MGlogo_duration) / 300.0) * 255.0);
 
-            this.turizoftlogo_color = Color.FromNonPremultiplied(0xff, 0xff, 0xff, (int) turizoftlogo < 0 ? 0 : turizoftlogo);
+            this.MGlogo_color = Color.FromNonPremultiplied(0xff, 0xff, 0xff, (int) turizoftlogo < 0 ? 0 : turizoftlogo);
             this.gamecherlogo_color = Color.FromNonPremultiplied(0xff, 0xff, 0xff, (int) (Math.Sin((1.5707963267948966 * this.gamecherlogo_duration) / 300.0) * 255.0));
             
         }
 
         public override void Update(GameTime gameTime) {
 
-            if (this.turizoftlogo_duration <= 300) {
-                this.turizoftlogo_duration++;
+            if (this.MGlogo_duration <= 300) {
+                this.MGlogo_duration++;
             }
             else if (this.gamecherlogo_duration <= 300) {
                 this.gamecherlogo_duration++;
@@ -111,9 +111,9 @@
                     Rectangle? sourceRectangle = null;
                     base.spriteBatch.Draw(base.getTexture("space_star"), this.rectangle_2[i], sourceRectangle, Color.FromNonPremultiplied(0xff, 0xff, 0xff, this.int_3[i]), 0f, Vector2.Zero, SpriteEffects.None, Depth.float_36);
                 }
-                base.spriteBatch.Draw(base.getTexture("MonogameLogo"), this.rectangle_1, null, this.turizoftlogo_color, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_32);
+                base.spriteBatch.Draw(base.getTexture("MonogameLogo"), this.rectangle_1, null, this.MGlogo_color, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_32);
                 base.spriteBatch.Draw(base.getTexture("gamecher"), this.rectangle_1, null, this.gamecherlogo_color, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_32);
-                if (this.turizoftlogo_duration >= 100)
+                if (this.MGlogo_duration >= 100)
                 {
                     Texture2D texture = base.getTexture(base.DashBoard.controllerEvents.GamePadAtached() ? "btn_a" : "key_enter");
                     base.spriteBatch.Draw(texture, this.rectangle_3, null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_21);
@@ -143,7 +143,7 @@
 
         public bool OnControllerAccept()
         {
-            if ((this.turizoftlogo_duration > 100) && !this.skippedIntro)
+            if ((this.MGlogo_duration > 100) && !this.skippedIntro)
             {
                 this.skipIntro();
             }
