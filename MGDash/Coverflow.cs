@@ -146,14 +146,14 @@
                 //UPdat moving covers
                 if (this.CenterCoverIndex < nextposition) {
 
-                    this.CoverflowMiddleBox.Case.align = Case360.Align.Left;
+                    this.CoverflowMiddleBox.Case.align = Case3D.Align.Left;
                 }
                 else if (this.CenterCoverIndex > nextposition) {
 
-                    this.CoverflowMiddleBox.Case.align = Case360.Align.Rigth;
+                    this.CoverflowMiddleBox.Case.align = Case3D.Align.Rigth;
                 }
-                else if (this.CoverflowMiddleBox.Case.align != Case360.Align.Center) {
-                    this.CoverflowMiddleBox.Case.align = Case360.Align.Center;
+                else if (this.CoverflowMiddleBox.Case.align != Case3D.Align.Center) {
+                    this.CoverflowMiddleBox.Case.align = Case3D.Align.Center;
                     
                     //Console.WriteLine("*"+this.centerCover.videoGame.name);
 
@@ -545,7 +545,7 @@
             int total = this.CoverFlowItems.Count;
             
             for (int i = 0; i < total; i++) {
-                this.CoverFlowItems[i].Case.align =  i <= (total / 2) ? Case360.Align.Left : Case360.Align.Rigth;
+                this.CoverFlowItems[i].Case.align =  i <= (total / 2) ? Case3D.Align.Left : Case3D.Align.Rigth;
             }
         }
         

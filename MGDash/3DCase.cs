@@ -8,7 +8,7 @@ using MGDash.Sources.Model;
 
 namespace MGDash
 {
-    public class Case360 : BaseClassDrawable 
+    public class Case3D : BaseClassDrawable 
     {
         private Model _model;
         private Matrix[] _boneTransforms;
@@ -27,14 +27,14 @@ namespace MGDash
         public float RAlignDegrees = -MathHelper.ToRadians(70f);
         public float LAlignDegrees = MathHelper.ToRadians(70f);
         
-        public Case360(Game game, Box _cover) : base(game) {
+        public Case3D(Game game, Box _cover) : base(game) {
             
             this.Box = _cover;
         }
 
         protected override void LoadContent() {
            
-            this._model = base.getModel("case360");
+            this._model = base.getModel("case3D");
             this.initialize();  
         }
         

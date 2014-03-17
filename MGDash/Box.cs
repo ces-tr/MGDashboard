@@ -37,13 +37,13 @@
         public Vector2 vector2_1;
         public readonly Vector2 vector2_2;
         public VideoGame VideoGame;
-        public Case360 Case;
+        public Case3D Case;
         public RenderTarget2D caseRender;
 
         public Box(Game _dashboard, VideoGame _videoGame, GamesSection _games, GameDetails _gdetails)
             : base(_dashboard)
         {
-            this.Case = new Case360(_dashboard,this);
+            this.Case = new Case3D(_dashboard,this);
             this.vector2_2 = new Vector2(64f, 64f);
             this.VideoGame = _videoGame;
             this.GamesSection = _games;
@@ -152,7 +152,7 @@
                         //base.spriteBatch.Draw(base.getTexture("cover_shadow"), this.rectangle_2, null, this.color_2, 0f, Vector2.Zero, SpriteEffects.None, Floats.float_49);
                     //}
                     
-                    base.spriteBatch.Draw((Texture2D)this.caseRender, base.background, null, this.color_0, 0f, Vector2.Zero, SpriteEffects.None, this.Case.align != Case360.Align.Center ?   Depth.float_49 : Depth.float_48);
+                    base.spriteBatch.Draw((Texture2D)this.caseRender, base.background, null, this.color_0, 0f, Vector2.Zero, SpriteEffects.None, this.Case.align != Case3D.Align.Center ?   Depth.float_49 : Depth.float_48);
                     
                     //if (base.dashBoard.config.user.glow_for_covers) {
                         //base.spriteBatch.Draw(base.getTexture("cover_glow"), base.background, null, this.color_0, 0f, Vector2.Zero, SpriteEffects.None, Floats.float_47);

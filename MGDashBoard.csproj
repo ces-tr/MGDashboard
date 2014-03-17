@@ -37,7 +37,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MGDash\Case360.cs" />
+    <Compile Include="MGDash\3DCase.cs" />
     <Compile Include="MGDash\ContentManagement.cs" />
     <Compile Include="MGDash\Box.cs" />
     <Compile Include="MGDash\Coverflow.cs" />
