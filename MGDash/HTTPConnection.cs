@@ -33,9 +33,9 @@
 
         public void Auntenticate(string username, string password, bool remember) {
 
-            string json = @"[{""username"":""" + username + @"""}]";//,""password"":""" + password + @""",""remember"":""" + remember.ToString().ToLower() + @"""}";
+            string json = @"{""username"":""" + username + @""",""password"":""" + password + @""",""remember"":""" + remember.ToString().ToLower() + @"""}";
             try {
-                //Console.WriteLine(JObject.Parse(json)));
+                Console.WriteLine(JObject.Parse(json));
                 this.Autenticated = JObject.Parse(this.POST("/sessions.json", JObject.Parse(json))).Value<bool>("success");
             }
             catch (Exception e){

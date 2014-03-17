@@ -81,7 +81,7 @@ namespace MGDash
             
             float time = (float)gameTime.TotalGameTime.TotalSeconds;
             //float sine = MathHelper.Clamp((float)(Math.Sin(time)), 0, 1);//* 100f;
-            this.wbones = Matrix.CreateRotationY(time * 0.5f);
+            //this.wbones = Matrix.CreateRotationY(time * 0.5f);
            // if (videoplayer.State == MediaState.Stopped) {
            //     videoplayer.Play(video);
            // }
@@ -101,7 +101,7 @@ namespace MGDash
                 foreach (BasicEffect mesheffect in mesh.Effects) {
                     mesheffect.View = view;
                     mesheffect.Projection = proj;
-                    mesheffect.World = _boneTransforms[mesh.ParentBone.Index] *wbones;
+                    mesheffect.World = _boneTransforms[mesh.ParentBone.Index];// *wbones;
                     mesheffect.EnableDefaultLighting();
                     
                 }
