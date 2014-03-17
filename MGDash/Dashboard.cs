@@ -174,8 +174,8 @@ namespace MGDash
 			else
 			{
 				RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-				string str = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Turizoft\\Gamecher\\Gamecher.exe");
-				key.SetValue("Gamecher", str);
+				string str = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "MGDash\\MGDash.exe");
+				key.SetValue("MGDash", str);
 			}
 		}
 

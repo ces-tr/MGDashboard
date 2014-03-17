@@ -78,9 +78,9 @@
 
         public override void CalculateColors() {
 
-            var turizoftlogo = (int)(Math.Sin((3.1415926535897931 * this.MGlogo_duration) / 300.0) * 255.0);
+            var logo = (int)(Math.Sin((3.1415926535897931 * this.MGlogo_duration) / 300.0) * 255.0);
 
-            this.MGlogo_color = Color.FromNonPremultiplied(0xff, 0xff, 0xff, (int) turizoftlogo < 0 ? 0 : turizoftlogo);
+            this.MGlogo_color = Color.FromNonPremultiplied(0xff, 0xff, 0xff, (int) logo < 0 ? 0 : logo);
             this.gamecherlogo_color = Color.FromNonPremultiplied(0xff, 0xff, 0xff, (int) (Math.Sin((1.5707963267948966 * this.gamecherlogo_duration) / 300.0) * 255.0));
             
         }
