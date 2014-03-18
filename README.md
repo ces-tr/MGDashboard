@@ -1,14 +1,14 @@
 MGDashboard- Monogame Dashboard
 ===========
 
-Known Issues
--Currently, only working on Windows OS.
--Keyboard Input is not working. You have to use Vjoy or Joystick.
--Partial Support for Offline mode.
+Known Issues<br>
+-Currently, only working on Windows OS.<br>
+-Keyboard Input is not working. You have to use Vjoy or Joystick.<br>
+-Partial Support for Offline mode.<br><br>
 
-Tools for Compilation
--Monogame http://monogame.codeplex.com/
--SlimDX http://slimdx.org/
--Nuclex Framework https://nuclexframework.codeplex.com/
+Tools for Compilation:<br>
+-Monogame http://monogame.codeplex.com/ <br>
+-SlimDX http://slimdx.org/ <br>
+-Nuclex Framework https://nuclexframework.codeplex.com/<br>
 
 
