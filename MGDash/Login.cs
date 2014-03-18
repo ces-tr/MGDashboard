@@ -310,7 +310,7 @@ namespace MGDash
 		{
 			if (this.offlinemode.Checked)
 			{
-				MessageBox.Show("Offline mode not supported yet");
+                MessageBox.Show("Offline mode Partially Supported");
 				this.InitializeDashboard();
 			}
 			else
