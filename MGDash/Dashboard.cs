@@ -26,7 +26,7 @@ namespace MGDash
 
 		public MGDash.BlurBackground BlurBackground;
 
-		public Settings settings;
+		public Settings Settings;
 
 		public InitializeComponents initializeComponents;
 
@@ -50,11 +50,11 @@ namespace MGDash
 
 		public List<Components> ModelComponents;
 
-		public DashBoard(HttpConnect httpconnection)
+		public DashBoard(HttpConnection httpconnection)
 		{
             base.Content.RootDirectory = "Content";
 			this.int_0 = 0;
-			this.settings = new Settings(this, ref httpconnection);
+			this.Settings = new Settings(this, ref httpconnection);
 			this.ContentManagement = new MGDash.ContentManagement(this);
             base.Components.Add(this.ContentManagement);
 			this.setGraphicsDevice();
@@ -70,7 +70,7 @@ namespace MGDash
 		{
             base.Content.RootDirectory = "Content";
 			this.int_0 = 0;
-			this.settings = new Settings(this);
+			this.Settings = new Settings(this);
 			this.ContentManagement = new MGDash.ContentManagement(this);
             base.Components.Add(this.ContentManagement);
 			this.setGraphicsDevice();
@@ -96,7 +96,7 @@ namespace MGDash
 				}
 			}
 			this.spriteBatch.End();
-			if ((!this.settings.user.blur_effect ? true : !this.controllerEvents.method_1()))
+			if ((!this.Settings.user.blur_effect ? true : !this.controllerEvents.method_1()))
 			{
 				this.BlurBackground.BluredBackground = this.ContentManagement.Textures["black"];
 			}
@@ -183,7 +183,7 @@ namespace MGDash
 		{
 			this.graphicsDeviceManager = new GraphicsDeviceManager(this);
 			this.graphicsDeviceManager.PreferMultiSampling=true;
-			if (!this.settings.user.fullscreen)
+			if (!this.Settings.user.fullscreen)
 			{
 				this.width = 1366;
 				this.heigth = 768;
@@ -196,7 +196,7 @@ namespace MGDash
 			this.rectangle = new Rectangle(0, 0, this.width, this.heigth);
 			this.graphicsDeviceManager.PreferredBackBufferWidth=this.width;
 			this.graphicsDeviceManager.PreferredBackBufferHeight=this.heigth;
-			this.graphicsDeviceManager.IsFullScreen=this.settings.user.fullscreen;
+			this.graphicsDeviceManager.IsFullScreen=this.Settings.user.fullscreen;
 			this.graphicsDeviceManager.ApplyChanges();
 			this.setPosition(new Point(0, 0));
 		}

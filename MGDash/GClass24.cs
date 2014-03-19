@@ -51,7 +51,7 @@
                 base.spriteBatch.Draw(base.getTexture("breadcum"), this.rectangle_4, null, Color.FromNonPremultiplied(0x1f, 160, 200, 230), 0f, Vector2.Zero, SpriteEffects.FlipHorizontally, Depth.float_39);
                 for (int i = Math.Max(0, this.CatListCount - 6); i < Math.Min(this.list_0.Count, this.CatListCount + 7); i++)
                 {
-                    string text = (this.list_0[i] == -1) ? "any" : base.DashBoard.settings.Categories[this.list_0[i]].display_name;
+                    string text = (this.list_0[i] == -1) ? "any" : base.DashBoard.Settings.Categories[this.list_0[i]].display_name;
                     Color color = Color.FromNonPremultiplied(0xff, 0xff, 0xff, Math.Max(0, 240 - (Math.Abs((int) (i - this.CatListCount)) * 40)));
                     int num2 = (((int) (base.DashBoard.heigth * 0.5f)) + this.int_2) + ((i - this.CatListCount) * 90);
                     this.vector2_0.X = (((base.DashBoard.width + 160) - this.int_1) + 20) - ((base.getFont("TextsLight").MeasureString(text).X * 0.8f) / 2f);

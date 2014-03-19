@@ -347,12 +347,12 @@
 
         public override void Show()
         {
-            if (base.DashBoard.settings.user.announcement)
+            if (base.DashBoard.Settings.user.announcement)
             {
-                this.gclass5_1.Title = base.DashBoard.settings.user.announcement_title;
-                this.gclass5_1.Text = base.DashBoard.settings.user.announcement_content;
+                this.gclass5_1.Title = base.DashBoard.Settings.user.announcement_title;
+                this.gclass5_1.Text = base.DashBoard.Settings.user.announcement_content;
                 this.gclass5_1.Show();
-                base.DashBoard.settings.method_4("announcement", false);
+                base.DashBoard.Settings.method_4("announcement", false);
             }
             base.Show();
         }

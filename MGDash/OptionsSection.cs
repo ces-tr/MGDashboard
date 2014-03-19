@@ -60,7 +60,7 @@
 
         public void method_4()
         {
-            this.stringBuilder_0 = new StringBuilder(JObject.FromObject(base.DashBoard.settings.user).ToString());
+            this.stringBuilder_0 = new StringBuilder(JObject.FromObject(base.DashBoard.Settings.user).ToString());
             this.stringBuilder_1 = new StringBuilder();
             this.stringBuilder_1.Append(this.stringBuilder_0);
             
@@ -130,14 +130,14 @@
             base.DashBoard.initializeComponents.titleBar.AppendControllerIcon("B", "back");
             if (!this.stringBuilder_1.Equals(this.stringBuilder_0))
             {
-                base.DashBoard.settings.method_3(JObject.Parse(this.stringBuilder_0.ToString()).ToObject<User>());
-                base.DashBoard.method_5(base.DashBoard.settings.user.load_on_start);
-                if (base.DashBoard.settings.user.fullscreen != base.DashBoard.graphicsDeviceManager.IsFullScreen)
+                base.DashBoard.Settings.saveUser(JObject.Parse(this.stringBuilder_0.ToString()).ToObject<User>());
+                base.DashBoard.method_5(base.DashBoard.Settings.user.load_on_start);
+                if (base.DashBoard.Settings.user.fullscreen != base.DashBoard.graphicsDeviceManager.IsFullScreen)
                 {
                     Message dlg_WindowMode = new Message(base.DashBoard, false, false)
                     {
                         Title = "Window mode has changed",
-                        Text = "It will be applied after restarting Gamecher"
+                        Text = "It will be applied after restarting the Application"
                     };
                     dlg_WindowMode.append("Close", ButtonControl.Options.Back, null);
                     dlg_WindowMode.Show();

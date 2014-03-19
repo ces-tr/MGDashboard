@@ -17,7 +17,7 @@
 
         public static bool logout()
         {
-            dashBoard.settings.HttpConnection.DeleteCookie();
+            dashBoard.Settings.HttpConnection.DeleteCookie();
             dashBoard.Exit();
             return true;
         }

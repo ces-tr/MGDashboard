@@ -18,7 +18,7 @@ namespace MGDash
 
 		private CheckBox offlinemode;
 
-		public HttpConnect HttpConnection = new HttpConnect();
+		public HttpConnection HttpConnection = new HttpConnection();
 
 		private IContainer icontainer_0;
 
@@ -375,7 +375,7 @@ namespace MGDash
 					catch (IOException oException)
 					{
 						exception = oException;
-						MessageBox.Show(string.Concat("There was an error while trying to create your links folder:", exception.Message), "Configuration error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show(string.Concat("There was an error while trying to create your boxart folder:", exception.Message), "Configuration error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 					}
 				}
 				path = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "\\MGDash\\data\\links");

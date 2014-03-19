@@ -12,13 +12,13 @@ namespace MGDash
 
 		private DashBoard dashboard;
 
-		public HttpConnect HttpConnection;
+		public HttpConnection HttpConnection;
 
 		public List<VideoGame> gameList;
 
 		public User user;
 
-		public Settings(DashBoard _dashboard, ref HttpConnect _httpconn)
+		public Settings(DashBoard _dashboard, ref HttpConnection _httpconn)
 		{
 			this.dashboard = _dashboard;
 			this.HttpConnection = _httpconn;
@@ -35,7 +35,7 @@ namespace MGDash
 			this.setOfflineCategoryData();
 		}
 
-		public void link(VideoGame videoGame, string gamepath)
+		public void saveLink(VideoGame videoGame, string gamepath)
 		{
 			try
 			{
@@ -46,10 +46,11 @@ namespace MGDash
 			}
 			catch
 			{
+                if (gamepath != null) videoGame.path = gamepath; //Offline mode 
 			}
 		}
 
-		public void method_3(User user_1)
+		public void saveUser(User user_1)
 		{
 			try
 			{
@@ -68,7 +69,7 @@ namespace MGDash
 			try
 			{
 				string str = (object_0 is bool ? object_0.ToString().ToLower() : object_0.ToString());
-				HttpConnect httpConnection = this.HttpConnection;
+				HttpConnection httpConnection = this.HttpConnection;
 				string[] string0 = new string[] { "{'user' : {'", string_0, "' : ", str, "} }" };
 				if (JObject.Parse(httpConnection.PUT("/api/user.json", JObject.Parse(string.Concat(string0)))).Value<bool>("success"))
 				{

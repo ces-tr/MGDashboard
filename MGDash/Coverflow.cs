@@ -48,7 +48,7 @@
             this.Rate = new Rate(_dashboard);
             this.gameDetails = new GameDetails(_dashboard);
             
-            foreach (VideoGame game in base.DashBoard.settings.gameList) {
+            foreach (VideoGame game in base.DashBoard.Settings.gameList) {
                 
                 this.GameList.Add(new Box(base.DashBoard, game, _gamesSection, this.gameDetails));
                 

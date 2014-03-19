@@ -39,13 +39,13 @@ namespace MGDash {
             
             ///**** SET MONOGAMECHER IMAGES////
             this.setImage("", "user_pic");
-            this.setImage(base.DashBoard.settings.user.user_bg, "user_bg");
-            this.setImage(base.DashBoard.settings.user.games_bg, "games_bg");
-            this.setImage(base.DashBoard.settings.user.games_menu_bg, "games_menu_bg");
-            this.setImage(base.DashBoard.settings.user.music_menu_bg, "music_menu_bg");
-            this.setImage(base.DashBoard.settings.user.videos_menu_bg, "videos_menu_bg");
-            this.setImage(base.DashBoard.settings.user.social_menu_bg, "social_menu_bg");
-            this.setImage(base.DashBoard.settings.user.options_menu_bg, "options_menu_bg");
+            this.setImage(base.DashBoard.Settings.user.user_bg, "user_bg");
+            this.setImage(base.DashBoard.Settings.user.games_bg, "games_bg");
+            this.setImage(base.DashBoard.Settings.user.games_menu_bg, "games_menu_bg");
+            this.setImage(base.DashBoard.Settings.user.music_menu_bg, "music_menu_bg");
+            this.setImage(base.DashBoard.Settings.user.videos_menu_bg, "videos_menu_bg");
+            this.setImage(base.DashBoard.Settings.user.social_menu_bg, "social_menu_bg");
+            this.setImage(base.DashBoard.Settings.user.options_menu_bg, "options_menu_bg");
             
             //*****SET 3D MODELS******
             this.Models = new Dictionary<string, Model>();

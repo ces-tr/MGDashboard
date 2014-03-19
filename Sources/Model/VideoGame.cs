@@ -20,8 +20,8 @@
         public bool favorite;
         public int id;
         public bool linked;
-        private readonly string local_cover_base_path = (Environment.GetFolderPath(Environment.SpecialFolder.Personal).Replace('\\', '/') + "/Gamecher/data/");
-        private readonly string local_shortcut_path = (Environment.GetFolderPath(Environment.SpecialFolder.Personal).Replace('\\', '/') + "/Gamecher/data/links/");
+        private readonly string local_cover_base_path = (Environment.GetFolderPath(Environment.SpecialFolder.Personal).Replace('\\', '/') + "/MGDash/data/");
+        private readonly string local_shortcut_path = (Environment.GetFolderPath(Environment.SpecialFolder.Personal).Replace('\\', '/') + "/MGDash/data/links/");
         public string name;
         public string path;
         public string players;
@@ -47,8 +47,9 @@
             return string.Concat(new object[] { this.local_cover_base_path, "boxart/original/front/cover_", this.id, ".png" }).Replace('\\', '/');
         }
 
-        public string method_2(string string_0)
+        public string getShortcutLocation(string string_0)
         {
+            Console.WriteLine(string.Concat(new object[] { this.local_shortcut_path, "shortcut_", this.id, string_0 }).Replace('\\', '/'));
             return string.Concat(new object[] { this.local_shortcut_path, "shortcut_", this.id, string_0 }).Replace('\\', '/');
         }
 
@@ -76,14 +77,14 @@
                     {
                         callSite_0 = CallSite<Func<CallSite, object, IWshShortcut>>.Create(Binder.Convert(CSharpBinderFlags.ConvertExplicit, typeof(IWshShortcut), typeof(VideoGame)));
                     }
-                    IWshShortcut interface3 = callSite_0.Target(callSite_0, interface2.CreateShortcut(this.method_2(".lnk")));
+                    IWshShortcut interface3 = callSite_0.Target(callSite_0, interface2.CreateShortcut(this.getShortcutLocation(".lnk")));
                     interface3.TargetPath = fileInfo.FullName;
                     interface3.WorkingDirectory = fileInfo.Directory.FullName;
-                    interface3.Description = "Gamecher generated link";
+                    interface3.Description = "MGDash generated link";
                     interface3.Save();
                     return true;
                 }
-                fileInfo.CopyTo(this.method_2(fileInfo.Extension), true);
+                fileInfo.CopyTo(this.getShortcutLocation(fileInfo.Extension), true);
                 return true;
             }
             catch (Exception exception)
@@ -103,16 +104,16 @@
             {
                 if (fileInfo_0.Extension.Equals(".lnk") || fileInfo_0.Extension.Equals(".url"))
                 {
-                    fileInfo_0.CopyTo(this.method_2(fileInfo_0.Extension), true);
+                    fileInfo_0.CopyTo(this.getShortcutLocation(fileInfo_0.Extension), true);
                     flag = true;
                 }
                 else
                 {
                     
-                    IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(this.method_2(".lnk"));
+                    IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(this.getShortcutLocation(".lnk"));
                     shortcut.TargetPath = fileInfo_0.FullName;
                     shortcut.WorkingDirectory = fileInfo_0.Directory.FullName;
-                    shortcut.Description = "MonoGamecher generated link";
+                    shortcut.Description = "MGDash generated link";
                     shortcut.Save();
                     flag = true;
                 }
@@ -139,7 +140,7 @@
         public void link(FileInfo fileInfo)
         {
             if (this.createShortcut(fileInfo)) {
-                this.Settings.link(this, this.method_2(!fileInfo.Extension.Equals(".url") ? ".lnk" : ".url"));
+                this.Settings.saveLink(this, this.getShortcutLocation(!fileInfo.Extension.Equals(".url") ? ".lnk" : ".url"));
             }
             this.checklinked();
         }

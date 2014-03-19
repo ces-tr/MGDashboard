@@ -124,8 +124,8 @@
             base.spriteBatch.DrawString(base.getFont("TitlesShadow"), this.timeText, this.vectorTime, Color.White, 0f, Vector2.Zero, (float) 0.8f, SpriteEffects.None, Depth.float_21);
             base.spriteBatch.Draw(base.getTexture("user_pic_shadow"), this.rectangle_2, null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_21 + 0.0001f);
             base.spriteBatch.Draw(base.getTexture("user_pic"), this.rectangle_1, null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_21);
-            base.spriteBatch.DrawString(base.getFont("TextsFullShadow"), base.DashBoard.settings.user.username, this.vector2_2, this.color_1, 0f, Vector2.Zero, (float) 1f, SpriteEffects.None, Depth.float_21 + 0.0001f);
-            base.spriteBatch.DrawString(base.getFont("TextsShadow"), base.DashBoard.settings.user.username, this.vector2_1, Color.White, 0f, Vector2.Zero, (float) 1f, SpriteEffects.None, Depth.float_21);
+            base.spriteBatch.DrawString(base.getFont("TextsFullShadow"), base.DashBoard.Settings.user.username, this.vector2_2, this.color_1, 0f, Vector2.Zero, (float) 1f, SpriteEffects.None, Depth.float_21 + 0.0001f);
+            base.spriteBatch.DrawString(base.getFont("TextsShadow"), base.DashBoard.Settings.user.username, this.vector2_1, Color.White, 0f, Vector2.Zero, (float) 1f, SpriteEffects.None, Depth.float_21);
             if (flag = base.DashBoard.controllerEvents.GamePadAtached())
             {
                 base.spriteBatch.Draw(base.getTexture("pad"), this.rectangle_3, null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_21);
@@ -134,7 +134,7 @@
             {
                 base.spriteBatch.Draw(base.getTexture("keyboard"), this.rectangle_4, null, Color.White, 0f, Vector2.Zero, SpriteEffects.None, Depth.float_21);
             }
-            if (base.DashBoard.settings.user.show_hints)
+            if (base.DashBoard.Settings.user.show_hints)
             {
                 if (this.dictionary_0.Count > 0)
                 {

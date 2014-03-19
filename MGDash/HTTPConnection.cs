@@ -9,16 +9,17 @@
     using System.Text;
     using MGDash.Sources.Model;
 
-    public sealed class HttpConnect {
+    public sealed class HttpConnection {
 
         public bool Autenticated;
+        
         public CookieCollection CookieCollection;
         public HttpWebResponse HttpWebResponse;
         public static readonly string baseurl = "http://www.gamecher.com/";
         private string CookieLocation;
         private string CookiePath;
 
-        public HttpConnect() {
+        public HttpConnection() {
             this.Autenticated = false;
             this.HttpWebResponse = null;
             this.CookieCollection = new CookieCollection();
@@ -26,7 +27,7 @@
             this.CookiePath = Path.Combine(this.CookieLocation, "session.dat");
         }
 
-        public HttpConnect(CookieCollection _cookieCollection, bool bool_1) : this() {
+        public HttpConnection(CookieCollection _cookieCollection, bool bool_1) : this() {
             this.CookieCollection = _cookieCollection;
             this.Autenticated = bool_1;
         }
@@ -35,7 +36,6 @@
 
             string json = @"{""username"":""" + username + @""",""password"":""" + password + @""",""remember"":""" + remember.ToString().ToLower() + @"""}";
             try {
-                Console.WriteLine(JObject.Parse(json));
                 this.Autenticated = JObject.Parse(this.POST("/sessions.json", JObject.Parse(json))).Value<bool>("success");
             }
             catch (Exception e){
@@ -100,14 +100,14 @@
             return this.HttpRequest(string_4, jobject_0, "POST");
         }
 
-        public string PUT(string string_4, JObject jobject_0) {
-            return this.HttpRequest(string_4, jobject_0, "PUT");
+        public string PUT(string url, JObject jobject_0) {
+            return this.HttpRequest(url, jobject_0, "PUT");
         }
 
-        private string HttpRequest(string string_4, JObject JSParameters, string method) {
+        private string HttpRequest(string url, JObject JSParameters, string method) {
             try {
                 string str = "";
-                HttpWebRequest request = (HttpWebRequest) WebRequest.Create(baseurl + string_4);
+                HttpWebRequest request = (HttpWebRequest) WebRequest.Create(baseurl + url);
                 request.CookieContainer = new CookieContainer();
                 this.addCookies(request);
                 
